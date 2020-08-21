@@ -5,7 +5,7 @@ apt-get install -y curl wget vim dialog software-properties-common
 
 add-apt-repository ppa:ondrej/php -y
 apt-get update
-apt-get install php5.6 php5.6-dev php5.6-xml php5.6-mysql php5.6-gd -y --allow-unauthenticated
+apt-get install php7.2 php7.2-dev php7.2-xml php7.2-mysql php7.2-gd mariaDB-server -y --allow-unauthenticated
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
@@ -29,12 +29,14 @@ apt-get install -y unixodbc-dev
 pecl install sqlsrv
 pecl install pdo_sqlsrv
 
-printf "; priority=20\nextension=sqlsrv.so\n" > /etc/php/7.4/mods-available/sqlsrv.ini
-printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/7.4/mods-available/pdo_sqlsrv.ini
+printf "; priority=20\nextension=sqlsrv.so\n" > /etc/php/7.2/mods-available/sqlsrv.ini
+printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/7.2/mods-available/pdo_sqlsrv.ini
 
 phpenmod sqlsrv pdo_sqlsrv
 
 apt-get install libapache2-mod-php apache2
 a2dismod mpm_event
 a2enmod mpm_prefork
-a2enmod php
+a2enmod php7.2
+
+
