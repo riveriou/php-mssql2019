@@ -18,7 +18,7 @@ RUN /data/php5.6-mssql2019-mysql10.sh
 RUN rm -r /data/*
 
 RUN apt-get install -y supervisor
-RUN apt-get clean
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo "[supervisord] " >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "nodaemon=true" >> /etc/supervisor/conf.d/supervisord.conf
