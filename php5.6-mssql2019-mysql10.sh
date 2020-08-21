@@ -3,10 +3,7 @@
 apt-get update
 apt-get install -y curl wget vim dialog software-properties-common
 
-
-add-apt-repository ppa:ondrej/php -y
-apt-get update
-apt-get install php5.6 php5.6-dev php5.6-xml php5.6-mysql php5.6-gd -y --allow-unauthenticated
+apt-get install php php-dev php-xml php-mysql php-gd -y --allow-unauthenticated
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
@@ -35,7 +32,7 @@ printf "; priority=30\nextension=pdo_sqlsrv.so\n" > /etc/php/7.4/mods-available/
 
 phpenmod sqlsrv pdo_sqlsrv
 
-apt-get install libapache2-mod-php5.6 apache2
+apt-get install libapache2-mod-php apache2
 a2dismod mpm_event
 a2enmod mpm_prefork
-a2enmod php5.6
+a2enmod php
