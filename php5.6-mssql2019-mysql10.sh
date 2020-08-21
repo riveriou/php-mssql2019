@@ -3,7 +3,9 @@
 apt-get update
 apt-get install -y curl wget vim dialog software-properties-common
 
-apt-get install php php-dev php-xml php-mysql php-gd -y --allow-unauthenticated
+add-apt-repository ppa:ondrej/php -y
+apt-get update
+apt-get install php5.6 php5.6-dev php5.6-xml php5.6-mysql php5.6-gd -y --allow-unauthenticated
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
