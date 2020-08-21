@@ -15,7 +15,7 @@ WORKDIR /data
 ADD . /data
 RUN chmod 755 /data/php5.6-mssql2019-mysql10.sh
 RUN /data/php5.6-mssql2019-mysql10.sh
-RUN rm /data/*
+RUN rm -r /data/*
 
 RUN apt-get install -y supervisor
 RUN apt-get clean
