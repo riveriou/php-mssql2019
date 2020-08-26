@@ -1,11 +1,12 @@
 #!/bin/bash
+# touch init.sh && chmod +x init.sh && vi init.sh
 
 apt-get update
 apt-get install -y curl wget vim dialog software-properties-common
 
 add-apt-repository ppa:ondrej/php -y
 apt-get update
-apt-get install php7.2 php7.2-dev php7.2-xml php7.2-mysql php7.2-gd mariadb-server -y --allow-unauthenticated
+apt-get install php7.2 php7.2-dev php7.2-xml php7.2-mysql php7.2-gd php7.2-mbstring php7.2-curl php7.2-zip mariadb-server -y --allow-unauthenticated
 
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
