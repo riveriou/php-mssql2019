@@ -30,6 +30,7 @@ RUN echo 'command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/ap
 RUN echo '#!/bin/sh' >> /startup.sh
 RUN echo 'service apache2 restart' >> /startup.sh
 RUN echo '/opt/mssql/bin/sqlservr' >> /startup.sh
+RUN echo 'service mysql restart' >> /startup.sh
 RUN echo 'exec supervisord -c /etc/supervisor/supervisord.conf' >> /startup.sh
 RUN echo "set pastetoggle=<F11> " >> ~/.vimrc
 
