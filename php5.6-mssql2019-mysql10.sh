@@ -19,6 +19,7 @@ add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.
 apt-get update
 
 ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-server
+/opt/mssql/bin/mssql-conf set sqlagent.enabled true
 # optional: for bcp and sqlcmd
 ACCEPT_EULA=Y apt-get install -y mssql-tools
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
